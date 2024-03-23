@@ -49,6 +49,18 @@ input{
     padding: 1rem;
 }
 
+.js-due-date-input{
+    max-width: 100%;
+    color: grey;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    direction: none;
+    max-height: 100%;
+    
+
+}
+
 .add-btn{
    /* border-radius: 10rem;
     border: 2px solid rgba(223, 212, 200, 0.662);
