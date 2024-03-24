@@ -50,16 +50,78 @@ input{
 }
 
 .js-due-date-input{
-    max-width: 100%;
+    width: 100%;
     color: grey;
+    background-color: white;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     direction: none;
     max-height: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
     
 
 }
+
+img{
+    fill: #9f6a46;
+}
+
+.js-input-element{
+    width:100%;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    
+}
+
+.task-box,
+.date-box{
+    
+    display: flex;
+
+}
+
+.task-box button,
+.date-box button{
+    border: none;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    border-right: 0;
+    background-color: white;
+    border-left: 2px solid rgb(233, 233, 233);
+    border-top: 2px solid rgb(233, 233, 233);
+    border-bottom: 2px solid rgb(233, 233, 233);
+    border-right: 0;
+    padding-left: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    
+    width: 20px;
+    fill: #3c3c3c;
+}
+
+.icon-tick{
+    fill: #484848;
+}
+
+
+.date-box button:active{
+    display: none;
+}
+
+
+
+
+
 
 .add-btn{
    /* border-radius: 10rem;
@@ -243,5 +305,10 @@ footer{
     color: rgb(204, 204, 204);
 
     
+}
+
+
+.js-due-date-input:active + .hide {
+    display: none;
 }
 
