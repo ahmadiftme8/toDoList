@@ -1,16 +1,23 @@
-let todoList = [ 
-
-    
-];
 
 
+let todoList =JSON.parse(localStorage.getItem('todoList')) || [{
+    name: '',
+    dueDate: '',
+}];
+
+renderTodoList();
+ 
 
 
 function renderTodoList(){
 
+   
 
+let todoListHTML =''; 
+/* let todoListHTML =storedHTML ? storedHTML : '';
 
-let todoListHTML ='';
+localStorage.setItem('theHTML', todoListHTML); */
+
 
 
 
@@ -43,12 +50,21 @@ for(let i = 0 ; i<todoList.length; i++){
     
         </div>`;
     todoListHTML += html;
+   
+/* 
+    localStorage.setItem('todoListHTML', todoListHTML); */
 
 }
 
 document.querySelector('.js-div').innerHTML = todoListHTML;
+saveToStorage();
+
 
 }
+
+
+
+
 
 
 
@@ -58,13 +74,19 @@ let inputElemet = document.querySelector('.js-input-element');
 
 btnElement.addEventListener('click', function(){
     connectInputWithBtn();
+    
 });
 
 inputElemet.addEventListener('keydown', function(event){
     if(event.keyCode === 13){
         connectInputWithBtn();
+        
     }
 })
+
+
+
+
 
 function connectInputWithBtn(){
 
@@ -74,21 +96,46 @@ function connectInputWithBtn(){
     todoList.push({
         name: inputElemet.value,
         dueDate : dueDateElement.value});
+        
 
-    console.log(todoList);
+    /* console.log(todoList); */
     inputElemet.value = '';
-    renderTodoList()
+    
+    renderTodoList();
+
+   
+
+
 
 
 
 
 }
 
+
+
+
+
+
 const dueDateElement = document.querySelector('.js-due-date-input');
 
 dueDateElement.addEventListener('keydown', function(event){
     if(event.keyCode === 13){
         connectInputWithBtn();
+        
     }
 })
+
+
+function saveToStorage(){
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+}
+
+
+
+
+
+
+
+
 
